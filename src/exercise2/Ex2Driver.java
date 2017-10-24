@@ -63,8 +63,17 @@ public class Ex2Driver {
    * @throws java.io.FileNotFoundException 
    */
   public static void writeMatrix(int[][] matrix, String filename) throws FileNotFoundException {
-    throw new UnsupportedOperationException();
+    File file = new File(filename);
+    PrintWriter write = new PrintWriter(file);
+    for (int[] row: matrix) {
+      for (int item: row) {
+        write.printf("%5d", item);
+      }
+      write.print("\n");
+    }
+    write.close();
   }
+    
   /**
    * Read a matrix from a file
    * @param filename
@@ -72,15 +81,23 @@ public class Ex2Driver {
    * @throws java.io.FileNotFoundException
    */
   public static int[][] readFile(String filename) throws FileNotFoundException {
-    throw new UnsupportedOperationException();
-    /*
-    10. Open the input file and create a Scanner object to read its content
-    20. Read two values (rows and columns) from the first line, if possible
-    30. Create a new 2-D array
-    40. Read data from the file, one line at a time, using the Scanner object
-    50. Split each line into individual tokens and put them into your array
-    60. Return the array
-    */
+    Scanner scan = new Scanner(new File(filename));
+    String first_row = scan.nextLine();
+    String [] row_col = first_row.split(" ");
+    int row = Integer.parseInt(row_col[0]);
+    int col = Integer.parseInt(row_col[1]);
+    int[][] matrix = new int[row][col];
+    int count = 0;
+    while(scan.hasNextLine() && count <= row){
+        String matrix_nums = scan.nextLine();
+        String [] nums = matrix_nums.split(" ");
+        for(int i = 0; i < col; i++){
+            matrix[count][i] = Integer.parseInt(nums[i]); 
+        }
+        count++;
+    } 
+    scan.close();
+    return matrix;
   }
   /**
    * Multiply two matrices
@@ -89,6 +106,17 @@ public class Ex2Driver {
    * @return the resulting matrix
    */
   public static int[][] multiply(int[][] matrix1, int[][] matrix2) {
-    throw new UnsupportedOperationException();
-  }
+      int m = matrix1.length;
+      int q = matrix2[0].length;
+      int p = matrix2.length;
+      int[][] sum_array = new int[m][q];
+      for(int i = 0; i < m;i++){
+        for(int j = 0; j < q ;j++){
+            for(int k = 0; k < p; k++){
+                sum_array[i][j] += matrix1[i][k]*matrix2[k][j];
+            }
+        }
+      }
+      return sum_array;
+    }
 }

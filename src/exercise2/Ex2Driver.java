@@ -32,7 +32,7 @@ public class Ex2Driver {
     //System.out.println(task8(numberLst, 75));
     //divider();
     task9();
-    //task10(task9());
+    task10(task9());
   }
 
   /**
@@ -196,7 +196,19 @@ public class Ex2Driver {
    * @param matrix
    */
   public static void task10(int[][] matrix) {
-    throw new UnsupportedOperationException("Task 3 is not implemented yet.");
+    int[] colSum =new int[matrix[0].length];
+    int sum = 0;
+    for (int i = 0; i < matrix.length; i++){   
+        for (int j = 0; j < matrix[i].length; j++){                
+            sum += matrix[i][j];
+            colSum[j] += matrix[i][j];
+        }
+        System.out.printf("sum of row %d  = %d%n", i + 1 , sum);
+        sum = 0;
+    }  
+    for(int k=0;k<colSum.length;k++){
+        System.out.printf("sum of column %d = %d%n", k + 1 ,colSum[k]);
+    } 
   }
   
   public static void divider(){

@@ -40,20 +40,7 @@ public class Ex2Driver {
    * @param n
    */
   public static void task1(int n) {
-    Random rnd = new Random();
-    rnd.setSeed(252);
-    int count = 0;
-    int flip = -1;
-    while(count < n){
-        flip = rnd.nextInt(2);
-        if(flip == 0){
-            System.out.print("Head ");
-            count++;
-        } else {
-            System.out.print("Tail\n");
-            count = 0;
-        }
-    }
+    nheads(n);
     System.out.print("\n");
     divider();
   }
@@ -213,6 +200,23 @@ public class Ex2Driver {
   
   public static void divider(){
       System.out.println("--------------------------------");
+  }
+  
+  public static void nheads(int n){
+    Random rnd = new Random();
+    rnd.setSeed(252);
+    int count = 0;
+    int flip = -1;
+    while(count < n){
+        flip = rnd.nextInt(2);
+        if(flip == 0){
+            System.out.print("Head ");
+            count++;
+        } else {
+            System.out.print("Tail\n");
+            count = 0;
+        }
+    }
   }
 
 }

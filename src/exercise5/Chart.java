@@ -1,6 +1,7 @@
 package exercise5;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -9,6 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.Scanner;
 
 /**
  * Class Chart
@@ -17,5 +19,27 @@ import java.util.regex.Pattern;
  * @author yasiro01
  */
 public class Chart {
-
+    private HashMap<Integer, Song> chart;
+    
+    public Chart(String filePath){
+        chart = new HashMap<Integer, Song>();
+        Song s;
+        try {
+            BufferedReader file = new BufferedReader(new FileReader(filePath));
+            String[] line;
+            for(int i = 1; i < 41; i++){
+                line = file.readLine().split(",");
+                s = new Song(line[1], line[2]);
+                chart.put(i, s);
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Chart.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Chart.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public Song getSong(Integer i){
+        return chart.get(i);
+    }
 }

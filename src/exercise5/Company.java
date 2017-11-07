@@ -6,5 +6,27 @@ package exercise5;
  * @author yasiro01
  */
 public class Company {
-  
+    private String name;
+    private double stockPrice;
+    
+    public Company(String name_, double stockPrice_){
+        name = name_;
+        stockPrice = stockPrice_;
+    }
+    
+    public String getName(){
+        return name;
+    }
+    
+    public double getStockPrice(){
+        return stockPrice;
+    }
+    
+    public void setStockPrice(double stockPrice_){
+        stockPrice = stockPrice_;
+    }
+    
+    public String toString(){
+        return name + " trading at $" + stockPrice + "0";
+    }
 }

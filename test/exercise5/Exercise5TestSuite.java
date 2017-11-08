@@ -21,8 +21,8 @@ import org.junit.runners.Suite;
   exercise5.LaptopTest.class,
   exercise5.SongTest.class,
   exercise5.ChartTest.class,
-  //exercise5.StudentTest.class,
-  //exercise5.RosterTest.class
+  exercise5.StudentTest.class,
+  exercise5.RosterTest.class
 })
 public class Exercise5TestSuite {
 

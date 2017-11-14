@@ -32,7 +32,7 @@ public class HourlyEmployee extends Employee {
     
     public void printWeeklyCheck(){
         double check = (hours * wageRate) / 52;
-        System.out.printf("%s's weekly check is $%f%n", this.getName(), check);
+        System.out.printf("%s's weekly check is $%f%n", this.name, check);
     }
     
 }

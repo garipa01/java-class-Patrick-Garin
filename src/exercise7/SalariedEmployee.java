@@ -21,6 +21,6 @@ public class SalariedEmployee extends Employee {
     }
     
     public void printWeeklyCheck(){
-        System.out.printf("%s's weekly salary is $%f%n",this.getName(), salary);
+        System.out.printf("%s's weekly salary is $%f%n",this.name, salary);
     }
 }

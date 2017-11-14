@@ -6,8 +6,8 @@ package exercise7;
     exercise7
  */
 public class Employee {
-    private String name;
-    private String ssn;
+    protected String name;
+    protected String ssn;
     private Double netPay;
     
     public Employee(String name_, String ssn_){

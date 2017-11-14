@@ -12,7 +12,7 @@ package exercise7;
 public class teststuff {
     public static void main(String[] args){
         HourlyEmployee me = new HourlyEmployee("Patrick Garin", "000-00-000", 14.00, 1234);
-        SalariedEmployee you = new SalariedEmployee("Matt Johnson", "123-45-678", 5000);
+        SalariedEmployee you = new SalariedEmployee("Matt Johnson ", "123-45-678", 5000);
         System.out.println(me.getName());
         System.out.println(me.getSsn());
         System.out.println(""+ me.getHours());

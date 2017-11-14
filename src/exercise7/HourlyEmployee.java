@@ -30,6 +30,7 @@ public class HourlyEmployee extends Employee {
         this.hours = hours;
     }
     
+    @Override
     public void printWeeklyCheck(){
         double check = (hours * wageRate) / 52;
         System.out.printf("%s's weekly check is $%f%n", this.name, check);

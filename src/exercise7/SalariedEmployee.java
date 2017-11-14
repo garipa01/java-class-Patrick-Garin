@@ -20,6 +20,7 @@ public class SalariedEmployee extends Employee {
         this.salary = salary;
     }
     
+    @Override
     public void printWeeklyCheck(){
         System.out.printf("%s's weekly salary is $%f%n",this.name, salary);
     }

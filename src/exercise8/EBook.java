@@ -7,6 +7,11 @@ package exercise8;
  */
 public class EBook extends Book {
   private final String format;
+
+    public EBook(String format, String author, int publishingYear, long id, String title) {
+        super(author, publishingYear, id, title, 1);
+        this.format = format;
+    }
   
   /**
    * Get the book format
@@ -16,4 +21,16 @@ public class EBook extends Book {
     return format;
   }
   
+   @Override
+  public void checkin() {
+  }
+  
+  @Override
+  public void checkout() {
+  }
+
+    @Override
+    public String getInfo() {
+      return this.title + "("+ this.publishingYear +") by " + this.author + " is available for " + this.format;  
+    }
 }

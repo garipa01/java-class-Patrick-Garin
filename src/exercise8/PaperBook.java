@@ -8,6 +8,13 @@ package exercise8;
 public class PaperBook extends Book {
   private final int pages;
   private String location;
+  
+  public PaperBook(int pages, String location, String author, int publishingYear, long id, String title, int quantity) {
+        super(author, publishingYear, id, title, quantity);
+        this.pages = pages;
+        this.location = location;
+    }
+  
 
   /**
    * Get the number of pages
@@ -38,7 +45,12 @@ public class PaperBook extends Book {
    * @param newLocation 
    */
   public void move(String newLocation) {
-    throw new UnsupportedOperationException();
+    setLocation(newLocation);
   }
+
+    @Override
+    public String getInfo() {
+        return this.title + "("+ this.publishingYear +") by " + this.author + " is located at " + this.location;  
+    }
   
 }

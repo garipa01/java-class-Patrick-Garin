@@ -10,6 +10,12 @@ import java.util.ArrayList;
 public class DigitalMovie extends Movie {
   private String service;
 
+    public DigitalMovie(String service, String director, int releaseYear, long id, String title) {
+        super(director, releaseYear, id, title, 1);
+        this.service = service;
+    }
+
+  
   /**
    * Get the value of service
    * @return the value of service
@@ -25,5 +31,18 @@ public class DigitalMovie extends Movie {
   public void setService(String service) {
     this.service = service;
   }
+  
+ @Override
+  public void checkin() {
+  }
+  
+  @Override
+  public void checkout() {
+  }
+
+ @Override
+ public String getInfo() {
+     return this.title + "("+ this.releaseYear +") by " + this.director + " is available via " + this.service;
+ }
   
 }
